@@ -6,6 +6,7 @@ module.exports = {
 
     create: (req, res) => {
         let user = new UserModel(req.body);
+
         user.save()
         .then(result => {
             res.json({ success: true, result: result});

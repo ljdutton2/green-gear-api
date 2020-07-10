@@ -30,7 +30,7 @@ module.exports = {
     },
 
     retrieve: (req, res) => {
-        postModel.find()
+        PostModel.find()
         .then(post => {
             if (!post) res.json({ success: false, result: "No posts found"})
 
