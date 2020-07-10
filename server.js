@@ -16,11 +16,20 @@ app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
 //Controllers
 const PostControl = require('./controllers/PostControl')
-//Routes
+const UserControl = require('./controllers/UserControl')
+//Routes Posts
 app.post('/api/post/create', PostControl.create)
 app.post('/api/post/update', PostControl.update)
 app.get('/api/post/retrieve', PostControl.retrieve)
 app.delete('/api/post/delete', PostControl.delete)
+
+//Routes Users
+app.post('/api/user/create', UserControl.create)
+app.post('/api/user/update', UserControl.update)
+app.get('/api/user/retrieveOne', UserControl.retrieveOne)
+app.get('/api/user/retrieveAll', UserControl.retrieveAll)
+app.delete('/api/user/delete', UserControl.delete)
+
 
 
   // INDEX
