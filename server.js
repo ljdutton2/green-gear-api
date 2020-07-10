@@ -6,9 +6,10 @@ require('dotenv').config()
 
 
 //Database
-mongoose.connect(process.env.MONGOLAB_URI||'mongodb://127.0.0.1:27017/greendb', {useNewUrlParser: true })
-.then(() => console.log("Connected to database"))
-.catch(err => console.log(err))
+// mongoose.connect(process.env.MONGOLAB_URI||'mongodb://127.0.0.1:27017/greendb', {useNewUrlParser: true })
+// .then(() => console.log("Connected to database"))
+// .catch(err => console.log(err))
+require('./data/greendb.js')
 
 //Middleware
 app.use(express.urlencoded({ extended: true}))
