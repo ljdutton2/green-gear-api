@@ -26,7 +26,7 @@ app.delete('/api/post/delete', PostControl.delete)
 //Routes Users
 app.post('/api/user/create', UserControl.create)
 app.post('/api/user/update', UserControl.update)
-app.get('/api/user/retrieveOne', UserControl.retrieveOne)
+app.get('/api/user/retrieveOne/:userId', UserControl.retrieveOne)
 app.get('/api/user/retrieveAll', UserControl.retrieveAll)
 app.delete('/api/user/delete', UserControl.delete)
 

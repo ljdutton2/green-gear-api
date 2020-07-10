@@ -31,7 +31,7 @@ module.exports = {
     retrieveAll: (req, res) => {
         UserModel.find()
         .then(users => {
-            if (!user) res.json({ success: false, result: "No users found"})
+            if (!users) res.json({ success: false, result: "No users found"})
 
                 return res.json({users})
         })
