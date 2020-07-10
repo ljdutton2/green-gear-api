@@ -27,7 +27,7 @@ module.exports = {
               res.json({ success: false, result: err})
           })
         },
-    // ge ALL users from db
+    // get ALL users from db
     retrieveAll: (req, res) => {
         UserModel.find()
         .then(users => {

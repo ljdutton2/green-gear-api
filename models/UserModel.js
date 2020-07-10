@@ -3,7 +3,7 @@ const Schema = mongoose.Schema
 
 const UserSchema = new Schema({
 username: String,
-password: Number,
+years: Number,
 branch: String,
 posts: [{ type: Schema.Types.ObjectId, ref: "post" }],
 
