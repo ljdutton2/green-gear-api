@@ -1,6 +1,7 @@
 const PostModel = require('../models/PostModel');
 
 module.exports = {
+// ADD post to db
     create: (req, res) => {
         let post = new PostModel({
            title: req.body.title,
@@ -16,7 +17,7 @@ module.exports = {
              res.json({ success: false, result: err})
             })
     },
-
+    // UPDATE existing post in db
     update: (req, res) => {
     postModel.update({_id: req.body._id}, req.body)
     .then(post => {
@@ -28,7 +29,7 @@ module.exports = {
           res.json({ success: false, result: err})
       })
     },
-
+    // get ALL posts 
     retrieve: (req, res) => {
         PostModel.find()
         .then(post => {
@@ -40,7 +41,7 @@ module.exports = {
             res.json({ success: false, result: err})
         })
     },
-
+    // REMOVE post from db
     delete: (req, res) => {
         postModel.remove({ _id: req.body._id})
         .then(post => {
