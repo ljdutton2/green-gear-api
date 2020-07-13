@@ -1,7 +1,7 @@
 const PostModel = require('../models/PostModel');
 
 module.exports = {
-// ADD post to db
+// ADD post to database
     create: (req, res) => {
         let post = new PostModel({
            title: req.body.title,
