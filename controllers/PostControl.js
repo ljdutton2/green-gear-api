@@ -6,6 +6,7 @@ module.exports = {
         let post = new PostModel({
            title: req.body.title,
         body: req.body.body,
+        author: req.body.author
         
         })
         post.save()

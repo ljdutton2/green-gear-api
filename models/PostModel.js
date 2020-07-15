@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 const PostSchema = new Schema({
 title: String,
 body: String,
-author: [{ type: Schema.Types.ObjectId, ref: "user" }],
+author: { type: String },
 
 })
 module.exports = mongoose.model('post', PostSchema)
