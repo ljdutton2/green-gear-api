@@ -30,6 +30,25 @@ app.get('/api/user/retrieveOne/:userId', UserControl.retrieveOne)
 app.get('/api/user/retrieveAll', UserControl.retrieveAll)
 app.delete('/api/user/delete', UserControl.delete)
 
+/*  PASSPORT SETUP  */
+
+const passport = require('passport');
+const UserModel = require('../models/UserModel');
+app.use(passport.initialize());
+app.use(passport.session());
+const UserSchema = UserModel.UserSchema;
+
+UserSchema.plugin(passportLocalMongoose);
+/* PASSPORT LOCAL AUTHENTICATION */
+
+passport.use(UserDetails.createStrategy());
+
+passport.serializeUser(UserSchema.serializeUser());
+passport.deserializeUser(UserSchema.deserializeUser());
+
+
+
+
 
 
   // INDEX
